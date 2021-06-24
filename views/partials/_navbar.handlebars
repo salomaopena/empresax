@@ -1,0 +1,46 @@
+<header id="header" class="fixed-top d-flex align-items-center   ">
+	<div class="container d-flex align-items-center justify-content-between">
+
+		<div class="logo">
+			<h1><a href="/">EMPRESA-X</a></h1>
+		</div>
+
+		<nav id="navbar" class="navbar">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+			</button>
+				<ul>
+					<li class="nav-item">
+						<a class="nav-link scrollto active" aria-current="page" href="/"> Início </a>
+					</li>
+					{{#if user }}
+					<li class="nav-item">
+						<a class="nav-link scrollto" href="/admin">Painel</a>
+					</li>
+					{{else}}
+
+					{{/if}}
+					<li class="nav-item ">
+						<a class="nav-link scrollto" href="/user/status/os">Estado de OS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link scrollto" href="/user/about/us">Sobre Nós</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link scrollto" href="/user/contact">Contactos</a>
+					</li>
+					{{#if user}}
+					<li class="nav-item">
+						<a class="nav-link scrollto" href="/user/logout">Sair</a>
+					</li {{else}} <li class="nav-item">
+					<a class="nav-link scrollto" href="/user/login">Login</a>
+					</li>
+					{{/if}}
+				</ul>
+			
+			<i class="fa fa-bars  mobile-nav-toggle"></i>
+
+		</nav><!-- .navbar -->
+	</div>
+</header><!-- End Header -->

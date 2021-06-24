@@ -1,0 +1,23 @@
+<div class="container p-4 mt-5">
+    <h1>RECUPERAR PALAVRA-PASSE</h1>
+    <hr />
+
+    <div class="container col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center">INFORME OS DADOS</h2>
+                <div class="mt-2"></div>
+                <form class="row g-3" action="/user/forgot" method="POST">
+                    <div class="col-md-12">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input type="email" required="true" class="form-control" name="email" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                </form>
+            </div>
+            <div class="mt-2"></div>
+        </div>
+        <div class="mt-3"></div>
+    </div>
+</div>

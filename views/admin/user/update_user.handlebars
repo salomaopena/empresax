@@ -1,0 +1,55 @@
+<div class="container p-4 mt-5">
+    <h1>ACTUALIZAR UTILIZADOR</h1>
+    <hr />
+    <div class="container col-md-8 offset-md-2">
+        {{#each errors}}
+        <div class="alert alert-danger">
+            {{text}}
+        </div>
+        {{else}}
+        {{/each}}
+        <div class="card-body">
+
+            <form class="row g-3" action="/admin/user/edit" method="POST">
+                <input type="hidden" name="id" value="{{user._id}}" />
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Nome</label>
+                    <input type="text" required="true" name="first_name" value="{{user.first_name}}"
+                        class="form-control" id="inputName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputLastName" class="form-label">Sobrenome</label>
+                    <input type="text" required="true" name="last_name" value="{{user.last_name}}" class="form-control"
+                        id="inputLastNam" placeholder="">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" required="true" class="form-control" name="email" value="{{user.email}}"
+                        id="inputEmail4">
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="inputPhone" class="form-label">Telefone</label>
+                    <input type="tel" name="phone_number" value="{{user.phone_number}}" class="form-control"
+                        id="inputPhone">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputBirthDay" class="form-label">Data de Nascimento</label>
+                    <input type="date" name="birthday" value="{{user.birthday}}" class="form-control" id="inputBirhday">
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label for="exampleFormControlTextarea1" class="form-label">Biografia</label>
+                    <textarea name="biography" required="true" class="form-control" id="exampleFormControlTextarea1"
+                        rows="3">{{user.biography}}</textarea>
+                </div>
+              
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success form-control">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-4"></div>
+</div>

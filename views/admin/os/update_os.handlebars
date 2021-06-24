@@ -1,0 +1,79 @@
+<div class="container p-4 mt-5">
+    <h1>ACTUALIZAR SERVIÇO</h1>
+    <hr />
+    <div class="container col-md-8 offset-md-2">
+        {{#each errors}}
+        <div class="alert alert-danger">
+            {{text}}
+        </div>
+        {{else}}
+        {{/each}}
+        <div class="card-body">
+
+            <form class="row g-3" action="/admin/os/edit" method="POST">
+
+                <input type="hidden" name="id" value="{{os._id}}" />
+
+                <div class="col-md-12">
+                    <label for="inputState" class="form-label">Cliente</label>
+                    <select id="inputState" class="form-select" name="customer">
+                        <option selected="true" value="0">Selecionar...</option>
+                        {{#each customers}}
+                        <option value="{{_id}}">{{customer_name}}</option>
+                        {{else}}
+                        <option value="0">Nenhum utilizador encontrado</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Equipamento</label>
+                    <input type="text" required="true" value="{{os.equipament}}" name="equipament" class="form-control"
+                        id="inputName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Defeito</label>
+                    <input type="text" required="true" value="{{os.defect}}" name="defect" class="form-control"
+                        id="inputName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Valor a pagar</label>
+                    <input type="number" required="true" value="{{os.payment}}" name="payment" class="form-control"
+                        id="inputName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Prazo em dias</label>
+                    <input type="number" required="true" value="{{os.deadline}}" name="deadline" class="form-control"
+                        id="inputName">
+                </div>
+                <div class="mb-3 col-md-12">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+                    <textarea name="description" required="true" class="form-control" id="exampleFormControlTextarea1"
+                        rows="3">{{os.description}}</textarea>
+                </div>
+                <div class="col-md-12">
+                    <label for="inputState" class="form-label">Técnico associado ao produto</label>
+                    <select id="inputState" class="form-select" name="technic">
+                        <option selected="true" value="0">Selecionar...</option>
+                        {{#each users}}
+                        <option value="{{_id}}">{{first_name}} {{last_name}}</option>
+                        {{else}}
+                        <option value="0">Nenhum utilizador encontrado</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="mb-3 col-md-12">
+                    <label for="exampleFormControlTextarea1" class="form-label">Assistência técnica</label>
+                    <textarea name="assistence" required="true" class="form-control" id="exampleFormControlTextarea1"
+                        rows="3">{{os.assistence}}</textarea>
+                </div>
+                <div class="col-md-12">
+                    <input type="hidden" name="user" value="{{user.id}}" />
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success form-control">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-4"></div>
+</div>

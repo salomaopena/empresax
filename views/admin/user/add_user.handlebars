@@ -1,0 +1,66 @@
+<div class="container p-4 mt-5">
+    <h1>NOVO UTILIZADOR</h1>
+    <hr />
+    <div class="container col-md-8 offset-md-2">
+        {{#each errors}}
+        <div class="alert alert-danger">
+            {{text}}
+        </div>
+        {{else}}
+        {{/each}}
+        <div class="card-body">
+
+            <form class="row g-3" action="/admin/user/new" method="POST">
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Nome</label>
+                    <input type="text" name="first_name" class="form-control" id="inputName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputLastName" class="form-label">Sobrenome</label>
+                    <input type="text" required="true" name="last_name" class="form-control" id="inputLastNam"
+                        placeholder="">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" required="true" class="form-control" name="email" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Palavra-passe</label>
+                    <input type="password" required="true" name="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Confirmar palavra-passe</label>
+                    <input type="password" required="true" name="password2" class="form-control" id="inputPassword4">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputPhone" class="form-label">Telefone</label>
+                    <input type="tel" name="phone_number" class="form-control" id="inputPhone">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputBirthDay" class="form-label">Data de Nascimento</label>
+                    <input type="date" name="birthday" class="form-control" id="inputBirhday">
+                </div>
+                <div class="mb-3 col-md-12">
+                    <label for="exampleFormControlTextarea1" class="form-label">Biografia</label>
+                    <textarea name="biography" required="true" class="form-control" id="exampleFormControlTextarea1"
+                        rows="3"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" value="true" name="is_superuser" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            É super utilizador?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success form-control">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-4"></div>
+</div>

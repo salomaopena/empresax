@@ -1,0 +1,46 @@
+<div class="container p-4 mt-5">
+    <h1>ESTADO DE ORDEM DE SERVIÇO</h1>
+    <hr />
+
+    <div class="container-fluid mt-4">
+        <div class="container">
+            <h5 class="uppercase lead text-center">Consultar o estado da Ordem de Serviço</h5>
+            <form class="row g-3 mt-2" action="/user/search" method="POST">
+                <div class="input-group mb-3">
+                    <input type="search" name="os" class="form-control"
+                        placeholder="Informe o número da sua Ordem de Serviço aqui..." aria-label="Os"
+                        aria-describedby="button-addon2">
+                    <button class="btn btn-success" type="submit" id="button-addon2"><i
+                            class="fa fa-search"></i></button>
+                </div>
+
+            </form>
+        </div>
+
+        <table class="table table-striped table-responsive mt-2 align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">Nº da OS</th>
+                    <th scope="col">PROGRESSO</th>
+                    <th scope="col">DATA</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each status}}
+                <tr>
+                    <th scope="row">{{os._id}}</th>
+                    <td>{{description}}</td>
+                    <td>{{created_at}}</td>
+                </tr>
+                {{else}}
+                <p class=" lean mt-4"> Nenhuma Ordem de Serviço encontrada</p>
+                {{/each}}
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+</div>

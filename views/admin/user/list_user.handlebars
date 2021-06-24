@@ -1,0 +1,75 @@
+<div class="container p-4 mt-5">
+    <h1>LISTA DE UTILIZADORES</h1>
+    <hr>
+    <a href="/admin/user/add"><button class="btn btn-success mt-2">
+            <i class="fa fa-pencil"></i> NOVO UTILIZADOR
+        </button></a>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-4">
+            </div>
+
+            <div class="col-sm-8">
+                <div class="text-center">
+                    <h2 class="text-center">PERFIL</h2>
+                    <figure class="figure mt-2">
+                        <img src="/images/user.png" class="w-25 p-3 figure-img img-fluid rounded">
+                    </figure>
+                </div>
+
+
+                
+
+                <table class="table table-responsive align-middle">
+
+                    <tr>
+                        <th scope="col">NOME</th>
+                        <td scope="row">{{user.first_name}} {{user.last_name}}</td>                        
+                    </tr>
+                    <tr>
+                        <th scope="col">ANIVERSÁRIO</th>
+                        <td>{{user.birthday}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="col">EMAIL</th>
+                        <td>{{user.email}}</td>
+                    </tr>
+
+                  
+                    <tr>
+                        <th scope="col">BIOGRAFIA</th>
+                        <td class="text-justify">{{user.biography}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="col">CRIADO EM</th>
+                        <td>{{user.created_at}}</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td> 
+                            <a class="btn btn-sm btn-success mt-2 text-end" href="/admin/user/update/{{user.id}}"><i
+                                    class="fa fa-pencil"></i> Actualizar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <th scope="row">
+                            <form action="/admin/user/delete" method="POST" class="mt-2">
+                                <input type="hidden" name="id" value="{{user.id}}" />
+                                <input type="hidden" name="is_active" value="false" />
+                                <input type="hidden" name="is_superuser" value="false" />
+                                <input type="hidden" name="is_staff" value="false" />
+                                <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-pencil">
+                                        Desactivar</i></button>
+                            </form>
+                        </th>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
